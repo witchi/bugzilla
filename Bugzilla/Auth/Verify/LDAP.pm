@@ -139,7 +139,7 @@ sub _bind_ldap_for_search {
     my $bind_result;
     if (Bugzilla->params->{"LDAPbinddn"}) {
         my ($LDAPbinddn,$LDAPbindpass) = 
-            split(":",Bugzilla->params->{"LDAPbinddn"});
+            split(":",Bugzilla->params->{"LDAPbinddn"},2);
         $bind_result = 
             $self->ldap->bind($LDAPbinddn, password => $LDAPbindpass);
     }
