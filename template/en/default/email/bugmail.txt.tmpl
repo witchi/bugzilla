@@ -32,6 +32,8 @@ Referenced [% terms.Bugs %]:
 [% END %]
 [% END %]
 -- [%# Protect the trailing space of the signature marker %]
+Please answer always to xxxx@domain!
+
 You are receiving this mail because:
 [% SET reason_lines = [] %]
 [% FOREACH reason = reasons %]
@@ -67,9 +69,9 @@ You are receiving this mail because:
 [%+ END %][%# End of IF. This indentation is intentional! ~%]
     [% PROCESS "email/bugmail-common.txt.tmpl"%]
     [%~ IF isnew %]
-      [% format_columns(2, field_label _ ":", new_value) -%]
+      [% format_columns(2, "zks" _ field_label _ ":", new_value) -%]
     [% ELSE %]
-      [% format_columns(3, field_label, old_value, new_value) -%]
+      [% format_columns(3, "zks" _ field_label, old_value, new_value) -%]
     [% END %]
   [% END -%]
 [% END %]
